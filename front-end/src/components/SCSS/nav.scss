@@ -4,7 +4,8 @@
   background-color: $primary-color;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  // justify-content: space-between;
+  justify-content: space-evenly;
   padding: 0.5rem;
   box-sizing: border-box;
   color: $nav-text;
@@ -25,7 +26,7 @@
     box-shadow: -2px 2px 0px 0px rgba(0, 0, 0, 0.23);
   }
 
-  div {
+  .nav-container__heading {
     width: 50%;
     display: flex;
     flex-direction: row;
@@ -35,19 +36,32 @@
   h1 {
     margin-left: 2rem;
   }
+}
 
-  ul {
-    width: 50%;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: center;
+.nav-container ul:nth-of-type(1) {
+  width: 25%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
 
-    a {
-      text-decoration: none;
-      margin-right: 2rem;
-      color: $nav-text;
-    }
+  a {
+    text-decoration: none;
+    margin-right: 2rem;
+    color: $nav-text;
+  }
+}
+
+.nav-container ul:nth-of-type(2) {
+  width: 15%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+
+  li div {
+    width: 100px;
+    margin-right: 1rem;
   }
 }
 
