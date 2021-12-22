@@ -5,6 +5,7 @@
 @import "./components/SCSS/link.scss";
 @import "./components/SCSS/landing.scss";
 @import "./components/SCSS/footer.scss";
+@import "./components/SCSS/contact.scss";
 
 .web-container {
   width: 100vw;
@@ -15,21 +16,26 @@
 
 .page {
   // margin-top: 0.5rem;
-  padding-top: 10vh;
+  margin-top: 16vh;
   box-sizing: border-box;
 }
 
 .break {
   height: 0;
+  width: 0;
   flex-basis: 100%;
 }
 
 h1 {
   font-size: 60px;
-  font-weight: 100;
+  font-weight: 200;
+}
+
+h2 {
+  text-transform: uppercase;
 }
 
 a {
   font-size: 20px;
-  font-weight: 200;
+  font-weight: 300;
 }

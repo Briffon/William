@@ -1,6 +1,6 @@
 import Team from "../../Assets/team.jpg";
-import Link from "../../Link";
 import Goalie from "../../Assets/goalie.jpg";
+import { Button } from "@mui/material";
 
 function Landing() {
   return (
@@ -8,18 +8,20 @@ function Landing() {
       <div className="landing-container__hero">
         <h2>Further Your Soccer Career Today</h2>
         <img src={Team} alt="soccer team" />
+        <div className="ice"></div>
         <div className="landing-container__hero-buttons">
-          <Link text={"Calendar"} />
-          <Link text={"Contact"} />
+          <Button variant="contained" size="large">
+            Calendar
+          </Button>
+          <Button variant="contained" size="large">
+            Contact
+          </Button>
         </div>
       </div>
 
       <section id="landing-articles">
         <article>
-          <div class="picture-frame">
-            <img src={Goalie} alt="placeholder" />
-          </div>
-
+          <img src={Goalie} alt="placeholder" />
           <div class="article-info">
             <h3>About</h3>
             <p>
@@ -31,7 +33,9 @@ function Landing() {
               nulla pariatur. Excepteur sint occaecat cupidatat non proident,
               sunt in culpa qui officia deserunt mollit anim id est laborum.
             </p>
-            <Link text="Learn More" />
+            <Button variant="outlined" size="large">
+              Learn More
+            </Button>
           </div>
         </article>
 
@@ -51,7 +55,9 @@ function Landing() {
               nulla pariatur. Excepteur sint occaecat cupidatat non proident,
               sunt in culpa qui officia deserunt mollit anim id est laborum.
             </p>
-            <Link text="Learn More" />
+            <Button variant="outlined" size="large">
+              Learn More
+            </Button>
           </div>
         </article>
       </section>
