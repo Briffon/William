@@ -1,6 +1,9 @@
 $primary-color: #b7d2a8;
+$secondary-color: rgba(17, 255, 9, 1);
+
 $nav-text: black;
 $nav-top: #181818;
+$nav-active: cyan;
 
 $hero-text: white;
 $background: #faf5f5;
@@ -14,6 +17,6 @@ $button-color: white;
 $button-hover: rgba(14, 34, 44, 0.8);
 $button-hover-border: cyan;
 
-$form-background: #f1f1f1;
+$form-background: #fdfdfd;
 $form-input: orange;
-$form-input-outline: cyan;
+$form-input-outline: rgb(94, 211, 211);

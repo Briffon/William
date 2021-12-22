@@ -1,0 +1,40 @@
+.philosophy-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 1rem;
+}
+
+.philosophy-container section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem;
+  margin-bottom: 1rem;
+  img {
+    width: 400px;
+    height: 400px;
+    border-radius: 10px 10px 10px 10px;
+
+    object-fit: cover;
+    object-position: 50% 50%;
+    padding: 0;
+    margin: 0;
+
+    -webkit-box-shadow: -2px -2px 0px 0px rgba(0, 0, 0, 0.23);
+    -moz-box-shadow: -2px -2px 0px 0px rgba(0, 0, 0, 0.23);
+    box-shadow: -2px -2px 0px 0px rgba(0, 0, 0, 0.23);
+  }
+
+  .info {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.philosophy-container section:nth-of-type(even) {
+  flex-direction: row-reverse;
+}

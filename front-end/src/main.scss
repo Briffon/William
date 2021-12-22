@@ -6,6 +6,7 @@
 @import "./components/SCSS/landing.scss";
 @import "./components/SCSS/footer.scss";
 @import "./components/SCSS/contact.scss";
+@import "./components/SCSS/philosophy.scss";
 
 .web-container {
   width: 100vw;
@@ -32,7 +33,7 @@ h1 {
 }
 
 h2 {
-  text-transform: uppercase;
+  // text-transform: uppercase;
 }
 
 a {

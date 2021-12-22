@@ -29,7 +29,7 @@ function Contact() {
           label="Message"
           fullWidth
           multiline
-          rows={6}
+          rows={10}
           defaultValue="Default Value"
         />
 

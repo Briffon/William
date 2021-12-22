@@ -1,10 +1,19 @@
 import React from "react";
 import willy from "../Assets/willy.jpg";
-import Link from "../Link";
 import AppBar from "@mui/material/AppBar";
 import { Button } from "@mui/material";
+import { useEffect, useState } from "react";
 
 function Nav() {
+  const [currentLocation, setCurrentLocation] = useState("");
+  useEffect(() => {
+    let url = window.location.href;
+    let location = url.split("/")[3];
+
+    setCurrentLocation(location);
+    console.log(location);
+  }, [currentLocation]);
+
   return (
     <AppBar className="nav-container">
       <div className="nav-container-top">
@@ -25,16 +34,33 @@ function Nav() {
 
         <ul>
           <li>
-            <a href="/">Home</a>
+            <a href="/" className={currentLocation == "" ? "active" : ""}>
+              Home
+            </a>
           </li>
           <li>
-            <a href="/Calendar">Calendar</a>
+            <a
+              href="/Calendar"
+              className={currentLocation == "Calendar" ? "active" : ""}
+            >
+              Calendar
+            </a>
           </li>
           <li>
-            <a href="/Contact">Contact</a>
+            <a
+              href="/Contact"
+              className={currentLocation == "Contact" ? "active" : ""}
+            >
+              Contact
+            </a>
           </li>
           <li>
-            <a href="/Philosophy">Philosophy</a>
+            <a
+              href="/Philosophy"
+              className={currentLocation == "Philosophy" ? "active" : ""}
+            >
+              Philosophy
+            </a>
           </li>
         </ul>
       </div>
