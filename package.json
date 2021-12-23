@@ -1,14 +1,18 @@
 {
   "name": "william",
   "version": "1.0.0",
+  "engines": {
+    "node": "16.7.0",
+    "npm": "8.3.0"
+  },
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "install:client": "cd front-end && npm i",
-    "instal:api": "cd back-end && npm i",
-    "install-all": "run-p install:*",
-    "start": "concurrently \"cd back-end && npm run start\" \"cd front-end && npm run start\""
+    "build": "cd front-end && npm run build",
+    "start": "cd back-end && npm install && npm run start",
+    "install-front-end": "cd front-end && npm install",
+    "heroku-postbuild": "npm run install-front-end && npm run build"
   },
   "repository": {
     "type": "git",

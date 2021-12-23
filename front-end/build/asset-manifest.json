@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/static/css/main.586b681e.css",
+    "main.js": "/static/js/main.a82db183.js",
+    "static/js/787.09ccf517.chunk.js": "/static/js/787.09ccf517.chunk.js",
+    "static/media/goalie.jpg": "/static/media/goalie.6748d34b08c87151a2ce.jpg",
+    "static/media/team.jpg": "/static/media/team.e5bd784202aee2cc3da7.jpg",
+    "static/media/willy.jpg": "/static/media/willy.88db3fe32d141fd32ec9.jpg",
+    "static/media/insta.svg": "/static/media/insta.487b9b6082d07caf68697e4fbac23df0.svg",
+    "static/media/x.svg": "/static/media/x.da5c42223be72e07b42078ba244d26c0.svg",
+    "index.html": "/index.html",
+    "static/media/twitter.svg": "/static/media/twitter.bca5c517404fe046602a231bb093cd33.svg",
+    "static/media/phone.svg": "/static/media/phone.a8e7140a0a896bb345e373632eff6bc1.svg",
+    "static/media/mail.svg": "/static/media/mail.28bc2435b9703c131d2d485c1d2aab59.svg",
+    "main.586b681e.css.map": "/static/css/main.586b681e.css.map",
+    "main.a82db183.js.map": "/static/js/main.a82db183.js.map",
+    "787.09ccf517.chunk.js.map": "/static/js/787.09ccf517.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.586b681e.css",
+    "static/js/main.a82db183.js"
+  ]
+}
