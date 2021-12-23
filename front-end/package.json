@@ -2,7 +2,8 @@
   "name": "william",
   "version": "0.1.0",
   "engines": {
-    "node": "16.7.0"
+    "node": "16.7.0",
+    "npm": "8.3.0"
   },
   "private": true,
   "dependencies": {
