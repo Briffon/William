@@ -5,12 +5,12 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "install:client": "cd front-end && npm i",
-    "instal:api": "cd back-end && npm i",
-    "install-all": "run-p install:*",
-    "start": "cd front-end && npm i && npm run start",
-    "api": "cd back-end; npm start",
-    "dev": "concurrently \"cd front-end && npm run start\" \"cd back-end && npm run start\""
+    "install-reactjs": "npm install --prefix reactjs",
+    "install-api": "npm install --prefix api",
+    "build-reactjs": "npm run build --prefix reactjs",
+    "build-api": "npm run migrate --prefix api",
+    "heroku-postbuild": "concurrently \"npm:install-*\"; concurrently \"npm:build-*\"; ",
+    "start": "npm start --prefix api"
   },
   "repository": {
     "type": "git",
