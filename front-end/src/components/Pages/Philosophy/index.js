@@ -3,8 +3,6 @@ import Placeholder from "../../Assets/goalie.jpg";
 function Philosophy() {
   return (
     <div className="page philosophy-container">
-      <h2>Philosophy</h2>
-
       <section>
         <img src={Placeholder} alt="placeholder" />
 

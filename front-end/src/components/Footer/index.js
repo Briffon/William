@@ -1,14 +1,26 @@
+import Twitter from "../Assets/twitter.svg";
+import Insta from "../Assets/insta.svg";
+import Phone from "../Assets/phone.svg";
+import Mail from "../Assets/mail.svg";
+
 function Footer() {
   return (
     <footer class="footer-container">
       <section>
         <h3>Quick Links</h3>
         <ul>
-          <li>Home</li>
-          <li>Home</li>
-          <li>Home</li>
-          <li>Home</li>
-          <li>Home</li>
+          <li>
+            <a href="">Home</a>
+          </li>
+          <li>
+            <a href="/Calendar">Calendar</a>
+          </li>
+          <li>
+            <a href="/Contact">Contact</a>
+          </li>
+          <li>
+            <a href="/Philosophy">Philosophy</a>
+          </li>
         </ul>
       </section>
 
@@ -17,12 +29,12 @@ function Footer() {
         <ul>
           <li>
             <a href="">
-              <img src="" alt="social media icon" />
+              <img alt="social media" src={Twitter} />
             </a>
           </li>
           <li>
             <a href="">
-              <img src="" alt="social media icon" />
+              <img alt="social media" src={Insta} />
             </a>
           </li>
         </ul>
@@ -32,16 +44,14 @@ function Footer() {
         <h3>Contact</h3>
         <ul>
           <li>
-            <img src="" alt="email" />
+            <img src={Mail} alt="email" />
+            <p>email@goeshere.com</p>
           </li>
-          <li>email@goeshere.com</li>
-        </ul>
 
-        <ul>
           <li>
-            <img src="" alt="email" />
+            <img src={Phone} alt="email" />
+            <p>(678)-232-9727</p>
           </li>
-          <li>email@goeshere.com</li>
         </ul>
       </section>
 
