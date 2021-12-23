@@ -110,6 +110,11 @@
   p {
     margin-top: 1rem;
   }
+
+  a {
+    text-decoration: none;
+    color: $button-color;
+  }
 }
 
 #landing-articles article:nth-of-type(2) {

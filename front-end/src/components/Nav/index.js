@@ -3,9 +3,14 @@ import willy from "../Assets/willy.jpg";
 import AppBar from "@mui/material/AppBar";
 import { Button } from "@mui/material";
 import { useEffect, useState } from "react";
+import x from "../Assets/x.svg";
+import { useHistory } from "react-router";
 
 function Nav() {
   const [currentLocation, setCurrentLocation] = useState("");
+
+  const history = useHistory();
+
   useEffect(() => {
     let url = window.location.href;
     let location = url.split("/")[3];
@@ -14,8 +19,67 @@ function Nav() {
     console.log(location);
   }, [currentLocation]);
 
+  const openMobile = (e) => {
+    document.getElementsByClassName("mobile-nav")[0].style = "display:flex;";
+  };
+
+  const closeMobile = (e) => {
+    let mobileNav = document.getElementsByClassName("mobile-nav")[0];
+
+    mobileNav.style = "display:none;";
+  };
+
+  const switchPage = (e, page) => {
+    e.preventDefault();
+    switch (page) {
+      case "home":
+        history.push("/");
+        closeMobile();
+        break;
+
+      case "contact":
+        history.push("/Contact");
+        closeMobile();
+        break;
+
+      case "calendar":
+        history.push("/Calendar");
+        closeMobile();
+        break;
+
+      case "philosophy":
+        history.push("/Philosophy");
+        closeMobile();
+        break;
+
+      default:
+        break;
+    }
+  };
+
   return (
     <AppBar className="nav-container">
+      <div className="mobile-nav">
+        <img onClick={closeMobile} src={x} alt="modal close" />
+
+        <ul>
+          <li>
+            <button onClick={(e) => switchPage(e, "home")}>Home</button>
+          </li>
+          <li>
+            <button onClick={(e) => switchPage(e, "calendar")}>Calendar</button>
+          </li>
+          <li>
+            <button onClick={(e) => switchPage(e, "contact")}>Contact</button>
+          </li>
+          <li>
+            <button onClick={(e) => switchPage(e, "philosophy")}>
+              Philosophy
+            </button>
+          </li>
+        </ul>
+      </div>
+
       <div className="nav-container-top">
         <Button variant="outlined" size="small">
           Login
@@ -63,6 +127,12 @@ function Nav() {
             </a>
           </li>
         </ul>
+
+        <div onClick={openMobile} className="hamburger">
+          <div className="hamburger-line"></div>
+          <div className="hamburger-line"></div>
+          <div className="hamburger-line"></div>
+        </div>
       </div>
     </AppBar>
   );
