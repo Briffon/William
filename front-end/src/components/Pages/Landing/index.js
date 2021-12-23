@@ -23,7 +23,7 @@ function Landing() {
         <article>
           <img src={Goalie} alt="placeholder" />
           <div class="article-info">
-            <h3>About</h3>
+            <h3>Philpsophy</h3>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
@@ -31,10 +31,10 @@ function Landing() {
               nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
               reprehenderit in voluptate velit esse cillum dolore eu fugiat
               nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
+              sunt in culpa qui officia deserunt mollit an...
             </p>
             <Button variant="outlined" size="large">
-              Learn More
+              <a href="/Philosophy">Philosophy</a>
             </Button>
           </div>
         </article>
@@ -45,7 +45,7 @@ function Landing() {
           </div>
 
           <div class="article-info">
-            <h3>About</h3>
+            <h3>Find The Perfect Time</h3>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
@@ -56,7 +56,29 @@ function Landing() {
               sunt in culpa qui officia deserunt mollit anim id est laborum.
             </p>
             <Button variant="outlined" size="large">
-              Learn More
+              <a href="/Calendar">Schedule</a>
+            </Button>
+          </div>
+        </article>
+
+        <article>
+          <div class="picture-frame">
+            <img src={Goalie} alt="placeholder" />
+          </div>
+
+          <div class="article-info">
+            <h3>Contact Me</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+            <Button variant="outlined" size="large">
+              <a href="/Contact">Contact</a>
             </Button>
           </div>
         </article>
