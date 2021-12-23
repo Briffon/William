@@ -9,8 +9,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "cd front-end && npm run build",
-    "heroku-postbuild": "cd front-end && npm install && npm run build"
+    "build": "cd front-end && npm run build",
+    "start": "cd cd-backend && npm run start",
+    "install-front-end": "cd front-end && npm install",
+    "heroku-postbuild": "npm run install-front-end && npm run build"
   },
   "repository": {
     "type": "git",
