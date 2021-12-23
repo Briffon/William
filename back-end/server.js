@@ -13,24 +13,24 @@ app.use(
     extended: true,
   })
 );
-mongoose.connect(
-  `mongodb+srv://root:${password}@cluster0.ftrze.mongodb.net/William?retryWrites=true&w=majority`,
-  {
-    useNewUrlParser: true,
-  }
-);
+// mongoose.connect(
+//   `mongodb+srv://root:${password}@cluster0.ftrze.mongodb.net/William?retryWrites=true&w=majority`,
+//   {
+//     useNewUrlParser: true,
+//   }
+// );
 
-//routes
-app.use("/users", authRoutes);
-app.get("/", async (req, res) => {
-  const users = new UsersModel({ email: "Britton", password: "12345" });
+// //routes
+// app.use("/users", authRoutes);
+// app.get("/", async (req, res) => {
+//   const users = new UsersModel({ email: "Britton", password: "12345" });
 
-  try {
-    await users.save();
-  } catch (err) {
-    console.log(err);
-  }
-});
+//   try {
+//     await users.save();
+//   } catch (err) {
+//     console.log(err);
+//   }
+// });
 
 app.listen(process.env.PORT || 3001, () => {
   console.log("Server is running on port 3001");
