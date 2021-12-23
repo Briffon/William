@@ -80,16 +80,6 @@ function Nav() {
         </ul>
       </div>
 
-      <div className="nav-container-top">
-        <Button variant="outlined" size="small">
-          Login
-        </Button>
-
-        <Button variant="outlined" size="small">
-          Register
-        </Button>
-      </div>
-
       <div className="nav-container-bottom">
         <div className="nav-container-bottom__heading">
           <img src={willy} alt="William Francoletti" />
