@@ -8,7 +8,7 @@
     "install:client": "cd front-end && npm i",
     "instal:api": "cd back-end && npm i",
     "install-all": "run-p install:*",
-    "start": "cd front-end && npm install && npm run build",
+    "start": "cd front-end && npm i && npm run build",
     "api": "cd back-end; npm start",
     "dev": "concurrently \"cd front-end && npm run start\" \"cd back-end && npm run start\""
   },
