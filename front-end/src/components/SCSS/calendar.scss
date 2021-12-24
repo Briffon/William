@@ -1,0 +1,60 @@
+.calendar-container {
+  border: 2px solid red;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  height: 100vh;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  margin-top: 12vh !important;
+}
+
+.calendar-container__heading {
+  border: 2px solid green;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.calendar-container__util {
+  border: 2px solid purple;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-evenly;
+
+  .MuiButton-root {
+    width: 100px;
+    height: 30px;
+
+    color: $button-color;
+  }
+}
+
+.calendar-container__days {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+  border: 2px solid blue;
+  justify-content: center;
+
+  .calendar-container__days__day,
+  .hidden-day {
+    width: calc(100% / 8);
+    text-align: center;
+  }
+  .calendar-container__days__day {
+    border: 2px solid red;
+  }
+  .hidden-day {
+    border: 2px solid brown;
+  }
+}
