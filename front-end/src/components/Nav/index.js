@@ -95,7 +95,11 @@ function Nav() {
           <li>
             <a
               href="/Calendar"
-              className={currentLocation == "Calendar" ? "active" : ""}
+              className={
+                currentLocation == "Calendar" || currentLocation.includes("Day")
+                  ? "active"
+                  : ""
+              }
             >
               Calendar
             </a>
