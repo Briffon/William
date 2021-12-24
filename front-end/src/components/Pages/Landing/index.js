@@ -40,9 +40,7 @@ function Landing() {
         </article>
 
         <article>
-          <div class="picture-frame">
-            <img src={Goalie} alt="placeholder" />
-          </div>
+          <img src={Goalie} alt="placeholder" />
 
           <div class="article-info">
             <h3>Find The Perfect Time</h3>
@@ -62,9 +60,7 @@ function Landing() {
         </article>
 
         <article>
-          <div class="picture-frame">
-            <img src={Goalie} alt="placeholder" />
-          </div>
+          <img src={Goalie} alt="placeholder" />
 
           <div class="article-info">
             <h3>Contact Me</h3>
