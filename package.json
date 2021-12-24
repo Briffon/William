@@ -8,7 +8,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo \"Error: no tst specified\" && exit 1",
     "build": "cd front-end && npm run build",
     "start": "cd back-end && npm install && npm run start",
     "install-front-end": "cd front-end && npm install",
