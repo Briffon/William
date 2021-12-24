@@ -3,6 +3,7 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
+  align-content: center;
   box-sizing: border-box;
   width: 100vw;
   flex-wrap: wrap;
@@ -15,10 +16,18 @@
     padding: 0.5rem;
   }
 
+  section:nth-of-type(3) {
+    margin-right: unset;
+  }
+
   section img {
     width: 30px;
     height: 30px;
     margin-right: 1rem;
+  }
+
+  h3 {
+    color: $footer-color;
   }
 }
 
@@ -29,7 +38,7 @@
 .footer-container section:nth-of-type(4) {
   width: 100vw;
   margin-right: 0;
-  color: $footer-bottom-color;
+  color: $footer-bottom-color !important;
   background-color: $footer-background2;
 }
 
@@ -50,4 +59,28 @@
 .footer-container a {
   text-decoration: none;
   color: $footer-color;
+}
+
+.footer-container h3 {
+  position: relative;
+}
+
+.footer-container h3::after {
+  content: "";
+  width: 80%;
+  position: absolute;
+  bottom: -1px;
+  right: 10%;
+  border: 1px solid rgba(16, 219, 255, 0.6);
+}
+
+@media (max-width: 640px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+
+    section {
+      margin-right: unset;
+    }
+  }
 }
