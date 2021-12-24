@@ -11,9 +11,10 @@ function Calendar() {
     const tempDate = new Date();
     setDate(tempDate);
     // console.log(tempDate.getMonth());
+    console.log(process.env.URL);
     if (months.length == 0) {
       axios
-        .get(process.env.URL || `http://localhost:5000` + "/months")
+        .get("https://william-francoletti.herokuapp.com" + "/months")
         .then((res) => {
           const months = res.data;
 
