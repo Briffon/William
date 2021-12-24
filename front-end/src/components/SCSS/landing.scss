@@ -126,3 +126,56 @@
     margin-right: auto;
   }
 }
+
+//mobile
+
+//hero text
+
+// Hero buttons
+@media (max-width: 1174px) {
+  .landing-container__hero-buttons {
+    .MuiButton-root {
+      width: 20%;
+    }
+  }
+}
+
+@media (max-width: 926px) {
+  .landing-container__hero-buttons {
+    .MuiButton-root {
+      width: 25%;
+    }
+  }
+}
+
+@media (max-width: 714px) {
+  .landing-container__hero-buttons {
+    .MuiButton-root {
+      width: 30%;
+    }
+  }
+}
+
+@media (max-width: 606px) {
+  .landing-container__hero-buttons {
+    .MuiButton-root {
+      width: 35%;
+    }
+  }
+}
+
+@media (max-width: 510px) {
+  .landing-container__hero-buttons {
+    .MuiButton-root {
+      width: 40%;
+    }
+  }
+}
+
+@media (max-width: 436px) {
+  .landing-container__hero-buttons {
+    .MuiButton-root {
+      width: 45%;
+    }
+  }
+}
