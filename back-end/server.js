@@ -37,24 +37,45 @@
 // });
 
 const express = require("express");
-const error = require("debug")("api:error");
 const app = express();
 require("dotenv").config();
 const morgan = require("morgan");
-const nodemailer = require("nodemailer");
 const port = process.env.PORT || 5000;
 const cors = require("cors");
 const path = require("path");
+const bodyParser = require("body-parser");
+
+//routes
+const Months = require("./routes/calendar");
+const authRoutes = require("./routes/authRoutes");
+
 app.use(morgan("dev"));
 app.use(express.json());
+
+const mongoose = require("mongoose");
+
+//middleware
 app.use(cors());
 
-app.use("/sendtome", require("./routes/sendToMe"));
+app.use(
+  bodyParser.urlencoded({
+    extended: true,
+  })
+);
+
+const uri = process.env.ATLAS_URI;
+mongoose.connect(uri, {
+  useNewUrlParser: true,
+});
+
+app.use("/months", Months);
+app.use("/users", authRoutes);
 
 app.use(express.static(path.join(__dirname, "../front-end/build")));
 app.get("/*", (req, res) => {
   res.sendFile(path.join(__dirname, "../front-end/build", "index.html"));
 });
+
 app.use((err, req, res, next) => {
   res.locals.error = err;
   const status = err.status || 500;
@@ -62,6 +83,7 @@ app.use((err, req, res, next) => {
   console.log(err);
   res.send("error");
 });
-app.listen(process.env.PORT || 5000, () => {
+
+app.listen(port || 5000, () => {
   console.log(`app is live on ${port}`);
 });
