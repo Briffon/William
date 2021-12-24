@@ -3,11 +3,12 @@ import Placeholder from "../../Assets/goalie.jpg";
 function Philosophy() {
   return (
     <div className="page philosophy-container">
+      <h2>Moto Here</h2>
       <section>
         <img src={Placeholder} alt="placeholder" />
 
         <div className="info">
-          <h2>Title</h2>
+          <h3>Title</h3>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
@@ -24,7 +25,7 @@ function Philosophy() {
         <img src={Placeholder} alt="placeholder" />
 
         <div className="info">
-          <h2>Title</h2>
+          <h3>Title</h3>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
@@ -41,7 +42,7 @@ function Philosophy() {
         <img src={Placeholder} alt="placeholder" />
 
         <div className="info">
-          <h2>Title</h2>
+          <h3>Title</h3>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
@@ -58,7 +59,7 @@ function Philosophy() {
         <img src={Placeholder} alt="placeholder" />
 
         <div className="info">
-          <h2>Title</h2>
+          <h3>Title</h3>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
