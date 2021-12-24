@@ -28,7 +28,7 @@
 }
 
 .MuiButton-root {
-  background-color: $secondary-color;
+  background-color: $secondary-color !important;
 }
 
 .MuiButton-root:hover {
@@ -44,6 +44,10 @@ h2 {
   // text-transform: uppercase;
   font-size: 48px;
 }
+
+// h3 {
+//   color: white;
+// }
 
 a {
   font-size: 20px;

@@ -1,5 +1,8 @@
-import Team from "../../Assets/team.jpg";
-import Goalie from "../../Assets/goalie.jpg";
+import Feet from "../../Assets/feet.jpg";
+import Phil from "../../Assets/phil.jpg";
+import Cal from "../../Assets/cal.jpg";
+import Contact from "../../Assets/contact.jpg";
+
 import { Button } from "@mui/material";
 
 function Landing() {
@@ -7,7 +10,7 @@ function Landing() {
     <div className="landing-container page">
       <div className="landing-container__hero">
         <h2>Further Your Soccer Career Today</h2>
-        <img src={Team} alt="soccer team" />
+        <img src={Feet} alt="soccer team" />
         <div className="ice"></div>
         <div className="landing-container__hero-buttons">
           <Button variant="contained" size="large">
@@ -21,7 +24,7 @@ function Landing() {
 
       <section id="landing-articles">
         <article>
-          <img src={Goalie} alt="placeholder" />
+          <img src={Phil} alt="placeholder" />
           <div class="article-info">
             <h3>Philpsophy</h3>
             <p>
@@ -40,7 +43,7 @@ function Landing() {
         </article>
 
         <article>
-          <img src={Goalie} alt="placeholder" />
+          <img src={Cal} alt="placeholder" />
 
           <div class="article-info">
             <h3>Find The Perfect Time</h3>
@@ -60,7 +63,7 @@ function Landing() {
         </article>
 
         <article>
-          <img src={Goalie} alt="placeholder" />
+          <img src={Contact} alt="placeholder" />
 
           <div class="article-info">
             <h3>Contact Me</h3>
