@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
+import axios from "axios";
 
 function Day() {
   const [currentDate, setCurrentDate] = useState("");
+  const [events, setEvents] = useState([]);
 
   useEffect(() => {
     let url = window.location.href;
@@ -9,6 +11,8 @@ function Day() {
     let tempDate = new Date(params);
 
     setCurrentDate(tempDate);
+
+    //axios request for events
   }, [currentDate]);
 
   return (
