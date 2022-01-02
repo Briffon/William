@@ -15,6 +15,47 @@ router.post("/publish", (req, res) => {
   console.log("month has been saved!");
 });
 
+//update events for a month
+router.patch("/event", async (req, res) => {
+  const newEvent = {
+    name: req.body.name,
+    date: req.body.date,
+    month: req.body.month,
+    time: req.body.time,
+  };
+  let month;
+
+  console.log(newEvent.month);
+  await Month.findOne({ month: newEvent.month }, function (err, res) {
+    if (err) {
+      console.log(err);
+    } else {
+      month = res;
+    }
+  })
+    .clone()
+    .catch(function (err) {
+      console.log(err);
+    });
+
+  console.log(month);
+
+  if (month !== undefined) {
+    month.events.push(newEvent);
+    console.log(month);
+
+    month
+      .save()
+      .then((month) => {
+        res.json(month);
+      })
+      .catch((err) => {
+        return res.status(400).json(err);
+      });
+  }
+});
+
+//get all months
 router.get("/", (req, res) => {
   // const date = new Date();
 
@@ -36,6 +77,7 @@ router.get("/", (req, res) => {
   // months.forEach((month) => {
   //   month.save();
   // });
+
   Month.find({}, function (err, result) {
     if (err) {
       console.log(err);
@@ -44,4 +86,28 @@ router.get("/", (req, res) => {
     }
   });
 });
+
+//get month by id
+router.get("/month/:month", (req, res) => {
+  Month.findOne({ month: req.params.month }, function (err, result) {
+    if (err) {
+      console.log(err);
+    } else {
+      res.json(result);
+    }
+  });
+});
+
+//get all events for one month
+router.get("/events/:month", (req, res) => {
+  console.log(req.params.month);
+  Month.findOne({ month: req.params.month }, function (err, result) {
+    if (err) {
+      console.log(err);
+    } else {
+      res.json(result.events);
+    }
+  });
+});
+
 module.exports = router;

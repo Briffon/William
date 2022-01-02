@@ -12,20 +12,19 @@ function Calendar() {
     setDate(tempDate);
     // console.log(tempDate.getMonth());
     console.log(process.env.URL);
+
     if (months.length == 0) {
-      axios
-        .get("https://william-francoletti.herokuapp.com" + "/months")
-        .then((res) => {
-          const months = res.data;
+      axios.get("http://localhost:5000" + "/months").then((res) => {
+        const months = res.data;
 
-          months.forEach((month) => {
-            if (month.month === tempDate.getMonth()) {
-              setCurrentMonth(month);
-            }
-          });
-
-          setMonths(months);
+        months.forEach((month) => {
+          if (month.month === tempDate.getMonth()) {
+            setCurrentMonth(month);
+          }
         });
+
+        setMonths(months);
+      });
     }
   }, [currentMonth]);
 
@@ -91,6 +90,27 @@ function Calendar() {
     }
   };
 
+  const findEvent = (day) => {
+    let tempEvents = [];
+    let els = ``;
+
+    currentMonth.events.map((event) => {
+      // if (parseInt(event.date) === day) console.log(event);
+      if (parseInt(event.date) === day) {
+        tempEvents.push(event);
+      }
+    });
+
+    tempEvents.forEach((event) => {
+      els += `<div className="event">
+      <h4>${event.name}</h4>
+      <p>${event.time}</p>
+      </div>`;
+    });
+
+    return tempEvents;
+  };
+
   const makeDays = () => {
     const tempDate = new Date();
     const fdotw = new Date(
@@ -112,12 +132,22 @@ function Calendar() {
     for (let i = 1; i <= currentMonth.days; i++) {
       const day = (
         <div className="calendar-container__days__day">
+          <div className="events">
+            {findEvent(i).length > 0
+              ? findEvent(i).map((event) => {
+                  {
+                    console.log(event);
+                  }
+                  return <span className="event">{event.name}</span>;
+                })
+              : null}
+          </div>
           <a
             href={`/Day?day=${getMonthString2(currentMonth.month)},${
               i >= 10 ? i : "0" + i
-            },${new Date().getFullYear()}`}
+            },${date.getFullYear()}`}
           >
-            {i}
+            <p>{i}</p>
           </a>
         </div>
       );
@@ -260,7 +290,7 @@ function Calendar() {
           </li>
         </ul>
         <div className="calendar-container__days">
-          {currentMonth ? makeDays() : null}
+          {currentMonth.days ? makeDays() : null}
         </div>
       </div>
     </div>

@@ -1,39 +1,83 @@
 .calendar-container {
-  border: 2px solid red;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 90%;
-  height: 100vh;
+  // height: 100vh;
   margin-right: auto;
   margin-left: auto;
-  padding: 1rem;
   margin-bottom: 1rem;
   margin-top: 12vh !important;
+  padding: 1rem;
 }
 
 .calendar-container__heading {
-  border: 2px solid green;
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+  padding: 0.5rem;
+  background-color: white;
+  position: relative;
+  z-index: 1;
+
+  -webkit-box-shadow: -2px 1px 0px 0px rgba(0, 0, 0, 0.23);
+  -moz-box-shadow: -2px 0px 0px 0px rgba(0, 0, 0, 0.23);
+  box-shadow: -2px 2px 0px 0px rgba(0, 0, 0, 0.23);
+
+  li {
+    border-right: 2px solid black;
+    width: calc(100% / 7);
+    max-width: calc(100% / 7);
+    text-align: center;
+  }
+
+  li:nth-last-of-type(1) {
+    border-right: none;
+  }
+}
+
+.calendar-container__heading::after {
+  content: "";
+  position: absolute;
+  border: 1px solid black;
+  width: 95%;
+
+  margin-right: auto;
+  margin-left: auto;
+  bottom: 0;
+  opacity: 0.5;
+  border-radius: 100%;
 }
 
 .calendar-container__util {
-  border: 2px solid purple;
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   justify-content: space-evenly;
+  border-radius: 10px 10px 0px 0px;
+  padding: 0.5rem;
+  background-color: white;
+
+  -webkit-box-shadow: -2px 2px 0px 0px rgba(0, 0, 0, 0.23);
+  -moz-box-shadow: -2px 2px 0px 0px rgba(0, 0, 0, 0.23);
+  box-shadow: -2px 2px 0px 0px rgba(0, 0, 0, 0.23);
 
   .MuiButton-root {
     width: 100px;
     height: 30px;
 
     color: $button-color;
+  }
+
+  select {
+    border: none;
+    background-color: transparent;
+    width: 10%;
+    text-align: center;
+    font-size: 24px;
   }
 }
 
@@ -43,18 +87,91 @@
   flex-wrap: wrap;
   width: 100%;
   height: 100%;
-  border: 2px solid blue;
-  justify-content: center;
+  background-color: white;
+  padding: 0.5rem;
+  position: relative;
+  z-index: 1;
+
+  -webkit-box-shadow: -2px 2px 0px 0px rgba(0, 0, 0, 0.23);
+  -moz-box-shadow: -2px 2px 0px 0px rgba(0, 0, 0, 0.23);
+  box-shadow: -2px 2px 0px 0px rgba(0, 0, 0, 0.23);
 
   .calendar-container__days__day,
   .hidden-day {
-    width: calc(100% / 8);
+    width: calc(100% / 7 - 1rem);
+    max-width: calc(100% / 7);
+    height: 160px;
     text-align: center;
+    margin: 0.5rem;
   }
+
   .calendar-container__days__day {
-    border: 2px solid red;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: $form-background;
+    border-radius: 5px;
+    position: relative;
+    -webkit-box-shadow: -2px 2px 0px 0px rgba(0, 0, 0, 0.23);
+    -moz-box-shadow: -2px 2px 0px 0px rgba(0, 0, 0, 0.23);
+    box-shadow: -2px 2px 0px 0px rgba(0, 0, 0, 0.23);
+
+    a p {
+      text-decoration: none;
+      font-size: 20px;
+      font-weight: 800;
+      color: $nav-text;
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      opacity: 0.65;
+    }
+
+    a {
+      width: 100%;
+      height: 100%;
+    }
   }
-  .hidden-day {
-    border: 2px solid brown;
-  }
+  // .hidden-day {
+  //   border: 2px solid brown;
+  // }
+}
+
+.event {
+  background: #a8ff78; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #78ffd6,
+    #a8ff78
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #78ffd6,
+    #a8ff78
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  margin-top: 0.5rem;
+  margin-left: 0.5rem;
+  max-width: 90%;
+  border-radius: 5px;
+  color: rgb(73, 15, 233);
+  padding: 5px;
+  font-size: 18px;
+  font-weight: 400;
+  text-align: left;
+
+  // top: 50%;
+  // left: 20%;
+  // transform: translate(-20%, -50%);
+}
+
+.events {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  border: 2px solid red;
+  height: 160px;
+  width: 100%;
 }

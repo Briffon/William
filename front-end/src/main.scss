@@ -20,6 +20,7 @@
   // margin-top: 0.5rem;
   margin-top: 11vh;
   box-sizing: border-box;
+  background-color: $background;
 }
 
 .break {
@@ -44,6 +45,14 @@ h1 {
 h2 {
   // text-transform: uppercase;
   font-size: 48px;
+}
+
+h3 {
+  font-size: 42px;
+}
+
+h4 {
+  font-size: 36px;
 }
 
 // h3 {
