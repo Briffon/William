@@ -14,17 +14,19 @@ function Calendar() {
     console.log(process.env.URL);
 
     if (months.length == 0) {
-      axios.get("http://localhost:5000" + "/months").then((res) => {
-        const months = res.data;
+      axios
+        .get("https://william-francoletti.herokuapp.com" + "/months")
+        .then((res) => {
+          const months = res.data;
 
-        months.forEach((month) => {
-          if (month.month === tempDate.getMonth()) {
-            setCurrentMonth(month);
-          }
+          months.forEach((month) => {
+            if (month.month === tempDate.getMonth()) {
+              setCurrentMonth(month);
+            }
+          });
+
+          setMonths(months);
         });
-
-        setMonths(months);
-      });
     }
   }, [currentMonth]);
 
