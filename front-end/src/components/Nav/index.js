@@ -16,7 +16,6 @@ function Nav() {
     let location = url.split("/")[3];
 
     setCurrentLocation(location);
-    console.log(location);
   }, [currentLocation]);
 
   const openMobile = (e) => {

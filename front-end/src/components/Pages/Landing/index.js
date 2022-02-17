@@ -25,7 +25,7 @@ function Landing() {
       <section id="landing-articles">
         <article>
           <img src={Phil} alt="placeholder" />
-          <div class="article-info">
+          <div className="article-info">
             <h3>Philpsophy</h3>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -45,7 +45,7 @@ function Landing() {
         <article>
           <img src={Cal} alt="placeholder" />
 
-          <div class="article-info">
+          <div className="article-info">
             <h3>Find The Perfect Time</h3>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -65,7 +65,7 @@ function Landing() {
         <article>
           <img src={Contact} alt="placeholder" />
 
-          <div class="article-info">
+          <div className="article-info">
             <h3>Contact Me</h3>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
