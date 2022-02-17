@@ -7,7 +7,6 @@ import "./main.scss";
 function App() {
   return (
     <Router>
-      {/* "start": "concurrently \"cd back-end && npm run start\" \"cd front-end && npm run start\"" */}
       <div className="web-container">
         <Nav />
         <Routes />

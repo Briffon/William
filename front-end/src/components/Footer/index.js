@@ -5,7 +5,7 @@ import Mail from "../Assets/mail.svg";
 
 function Footer() {
   return (
-    <footer class="footer-container">
+    <footer className="footer-container">
       <section>
         <h3>Quick Links</h3>
         <ul>
@@ -55,7 +55,7 @@ function Footer() {
         </ul>
       </section>
 
-      <div class="break"></div>
+      <div className="break"></div>
       <section>
         <p>@WilliamFrancoletti 2021</p>
       </section>
