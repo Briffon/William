@@ -17,6 +17,7 @@ router.post("/publish", (req, res) => {
 
 //update events for a month
 router.patch("/event", async (req, res) => {
+  console.log("BODY:", req.body);
   const newEvent = {
     name: req.body.name,
     date: req.body.date,
@@ -26,28 +27,25 @@ router.patch("/event", async (req, res) => {
   let month;
 
   console.log(newEvent.month);
-  await Month.findOne({ month: newEvent.month }, function (err, res) {
-    if (err) {
-      console.log(err);
-    } else {
-      month = res;
-    }
-  })
-    .clone()
+  await Month.findOne({ month: newEvent.month })
+    .then((res) => {
+      if (res) {
+        console.log("res", res);
+        month = res;
+      }
+    })
     .catch(function (err) {
-      console.log(err);
+      console.log("err:", err);
     });
 
-  console.log(month);
-
+  console.log("month: ", month);
   if (month !== undefined) {
     month.events.push(newEvent);
-    console.log(month);
 
     month
       .save()
       .then((month) => {
-        res.json(month);
+        return res.status(200).json(month);
       })
       .catch((err) => {
         return res.status(400).json(err);

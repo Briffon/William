@@ -14,19 +14,17 @@ function Calendar() {
     console.log(process.env.URL);
 
     if (months.length == 0) {
-      axios
-        .get("https://william-francoletti.herokuapp.com" + "/months")
-        .then((res) => {
-          const months = res.data;
+      axios.get("http://localhost:5000" + "/months").then((res) => {
+        const months = res.data;
 
-          months.forEach((month) => {
-            if (month.month === tempDate.getMonth()) {
-              setCurrentMonth(month);
-            }
-          });
-
-          setMonths(months);
+        months.forEach((month) => {
+          if (month.month === tempDate.getMonth()) {
+            setCurrentMonth(month);
+          }
         });
+
+        setMonths(months);
+      });
     }
   }, [currentMonth]);
 
@@ -94,20 +92,12 @@ function Calendar() {
 
   const findEvent = (day) => {
     let tempEvents = [];
-    let els = ``;
 
     currentMonth.events.map((event) => {
       // if (parseInt(event.date) === day) console.log(event);
       if (parseInt(event.date) === day) {
         tempEvents.push(event);
       }
-    });
-
-    tempEvents.forEach((event) => {
-      els += `<div className="event">
-      <h4>${event.name}</h4>
-      <p>${event.time}</p>
-      </div>`;
     });
 
     return tempEvents;
@@ -134,21 +124,32 @@ function Calendar() {
     for (let i = 1; i <= currentMonth.days; i++) {
       const day = (
         <div className="calendar-container__days__day">
-          <div className="events">
-            {findEvent(i).length > 0
-              ? findEvent(i).map((event) => {
-                  {
-                    console.log(event);
-                  }
-                  return <span className="event">{event.name}</span>;
-                })
-              : null}
-          </div>
           <a
             href={`/Day?day=${getMonthString2(currentMonth.month)},${
               i >= 10 ? i : "0" + i
             },${date.getFullYear()}`}
           >
+            <div className="events">
+              {findEvent(i).length > 0
+                ? findEvent(i).map((event, key) => {
+                    if (i % 2 && key <= 1) {
+                      return (
+                        <span className="event color-one">
+                          {event.name} {event.time}
+                        </span>
+                      );
+                    } else if (i % 3 && key <= 1) {
+                      return (
+                        <span className="event color-two">
+                          {event.name} {event.time}
+                        </span>
+                      );
+                    } else if (key > 1) {
+                      return <span>View All</span>;
+                    }
+                  })
+                : null}
+            </div>
             <p>{i}</p>
           </a>
         </div>

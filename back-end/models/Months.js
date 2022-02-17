@@ -20,3 +20,6 @@ const MonthSchema = new Schema(
   { timestamps: true }
 );
 module.exports = Month = mongoose.model("months", MonthSchema);
+
+//make a new model
+//replace event with a new model
