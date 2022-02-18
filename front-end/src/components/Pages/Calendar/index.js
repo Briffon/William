@@ -130,39 +130,56 @@ function Calendar() {
     }
     for (let i = 1; i <= currentMonth.days; i++) {
       let limit = 0;
-
+      console.log(date.getDay());
       const day = (
-        <div key={`A${i}`} className="calendar-container__days__day">
+        <div
+          key={`A${i}`}
+          className={
+            date.getDay() === i && currentMonth.month === date.getMonth()
+              ? "active-day calendar-container__days__day"
+              : "calendar-container__days__day"
+          }
+        >
           <a
             href={`/Day?day=${getMonthString2(currentMonth.month)},${
               i >= 10 ? i : "0" + i
             },${date.getFullYear()}`}
           >
-            <div className="events">
-              {findEvent(i).length > 0
-                ? findEvent(i).map((event, key) => {
-                    if (i % 2 && key <= 1) {
-                      return (
-                        <span key={key} className="event color-one">
-                          {event.name} {event.time}
-                        </span>
-                      );
-                    } else if (i % 3 && key <= 1) {
-                      return (
-                        <span key={key} className="event color-two">
-                          {event.name} {event.time}
-                        </span>
-                      );
-                    } else if (key > 1) {
-                      if (limit === 0) {
-                        limit = limit + 1;
-                        return <span key={key}>View All</span>;
-                      }
-                    }
-                  })
-                : null}
-            </div>
             <p>{i}</p>
+            {findEvent(i).length > 0 ? (
+              <div className="events">
+                {findEvent(i).map((event, key) => {
+                  if (i % 2 && key <= 1) {
+                    return (
+                      <span key={key} className="event color-one">
+                        {event.name} {event.time}
+                        <div className="corner">
+                          <div className="fold"></div>
+                        </div>
+                      </span>
+                    );
+                  } else if (i % 3 && key <= 1) {
+                    return (
+                      <span key={key} className="event color-two">
+                        {event.name} {event.time}
+                        <div className="corner">
+                          <div className="fold"></div>
+                        </div>
+                      </span>
+                    );
+                  } else if (key > 1) {
+                    if (limit === 0) {
+                      limit = limit + 1;
+                      return (
+                        <span key={key} className="view-all">
+                          View All
+                        </span>
+                      );
+                    }
+                  }
+                })}
+              </div>
+            ) : null}
           </a>
         </div>
       );
@@ -210,51 +227,9 @@ function Calendar() {
 
   const selectChange = (e) => {
     let temp = e.target.value.toLowerCase();
-    let switchTo = 0;
-
-    switch (temp) {
-      case "january":
-        switchTo = 0;
-        break;
-      case "february":
-        switchTo = 1;
-        break;
-      case "march":
-        switchTo = 2;
-        break;
-      case "april":
-        switchTo = 3;
-        break;
-      case "may":
-        switchTo = 4;
-        break;
-      case "june":
-        switchTo = 5;
-        break;
-      case "july":
-        switchTo = 6;
-        break;
-      case "august":
-        switchTo = 7;
-        break;
-      case "september":
-        switchTo = 8;
-        break;
-      case "october":
-        switchTo = 9;
-        break;
-      case "november":
-        switchTo = 10;
-        break;
-      case "december":
-        switchTo = 11;
-        break;
-      default:
-        break;
-    }
 
     months.forEach((month) => {
-      if (month.month == switchTo) {
+      if (month.month == temp) {
         setCurrentMonth(month);
       }
     });
